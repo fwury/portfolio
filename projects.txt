@@ -1,0 +1,35 @@
+name: pholoh - BUGGIN
+thumbnail: thumbnails/buggin.png
+vimeo_links:
+https://player.vimeo.com/video/339182963
+https://player.vimeo.com/video/339182963
+https://player.vimeo.com/video/339182963
+description:
+Models
+@feather_is_alive
+@thxrston
+
+Director — @j6shy
+DP / Producer — @allieleichter
+1st AC — @jpegcole
+Gaffer — @tron_boy_fresh
+Key Grip — @grahamhammond
+
+Edit & VFX — @declanfzg
+3D Lead & comp — @johndrhm
+3D — @sp1ll
+Color — @declanfzg
+
+---
+
+name: twinuzis - waiting for love!
+thumbnail: thumbnails/waiting-for-love.png
+vimeo_links:
+https://player.vimeo.com/video/339182963
+description:
+vfx by me & @declanfzg
+dir.by @jacksonmagnabosco @keatondjones
+title by @declanfzg
+3d by @sp1ll
+
+---
