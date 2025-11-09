@@ -2,8 +2,6 @@ name: pholoh - BUGGIN
 thumbnail: thumbnails/buggin.png
 vimeo_links:
 https://player.vimeo.com/video/339182963
-https://player.vimeo.com/video/339182963
-https://player.vimeo.com/video/339182963
 description:
 Models
 @feather_is_alive
@@ -22,14 +20,187 @@ Color — @declanfzg
 
 ---
 
-name: twinuzis - waiting for love!
+name: twinuzis - Waiting For Love!
 thumbnail: thumbnails/waiting-for-love.png
 vimeo_links:
-https://player.vimeo.com/video/339182963
+https://www.youtube.com/embed/hFkoJwfDEK0
 description:
 vfx by me & @declanfzg
 dir.by @jacksonmagnabosco @keatondjones
 title by @declanfzg
 3d by @sp1ll
+
+---
+
+name: ditch x gunnr popup campaign
+thumbnail: thumbnails/ditch.png
+vimeo_links:
+https://player.vimeo.com/video/339182963
+description:
+shot & edited in 20 hours
+
+Starring: @syrianpsycho @co1inmyers
+
+Director: @j6shy
+Producer / Director of Photography: @allieleichter
+1st AD: @johndrhm
+
+Gaffer: @cma_era
+Key Grip: @calub_harris
+1st AC: @jpegcole
+2nd AC: @bykaiii
+Audio Recordist: @hollyfontanetta
+
+Editor: @declanfzg
+VFX Lead: @declanfzg
+Colorist: @johndrhm
+
+Storyboard Illustrator: @ineurysm
+
+Styling: @conceal @trentkiim
+Casting Coordinators: @a_lexjs @victorrphm @trentkiim
+Set Design: @j6shy
+
+BTS Videographer: @trickyjacob
+BTS Photographers: @ttylerphamm @poultryheadd
+
+---
+
+name: Booster Juice
+thumbnail: thumbnails/booster-juice.png
+vimeo_links:
+https://www.youtube.com/embed/RWIqGBzpmKU
+description:
+VFX/animation by me & @declanfzg
+
+Producer: @emilioreyes06
+Director: @mmmaaaaaaax
+DP: @tyferguson
+1st AC: @tom.bonham.film
+2nd AC: @jarednichyporuk
+Key Grip: @dp.pinzon
+Key Gaffer: @chinoboom
+Best Grip: @clayton.peterson88
+Best Gaff: @rionel_de_mesa
+Art Dept: @caitlin.varrin
+Makeup: @ambervictoriamakeup
+DIT/Live Editor: @tahj.raju
+PA’s: @loganthe_t | @brendanshaw2213 | @charles.l.janzen | @matthew.parillas
+BTS Photo: @_antvisuals
+BTS Video: @shirodeguia
+Storyboard: @adamdarling_
+
+Male Lead Talent: @lebawwa
+Female Lead Talent: meg.ewa
+Swimmer: @mercedespumaa
+Soccer Goalie: @cameron_gut
+
+Color: @jgfilmincolour
+Edit: @mmmaaaaaaax & @tyferguson
+Music: @artlist.io
+Prod Company: @lucidfilmco
+
+---
+
+name: Babyface Ray, LUCKI - Standing on Business
+thumbnail: thumbnails/standing-on-business.png
+vimeo_links:
+https://www.youtube.com/embed/xt74rwLdeyg
+description:
+vfx by me & @declanfzg
+directed by @lestynpark
+titles by @declanfzg & @r9v3r
+color by @joeade_
+production company @imagecontrolstudios
+
+---
+
+name: VEEZE - L.O.A.T
+thumbnail: thumbnails/loat.png
+vimeo_links:
+https://www.youtube.com/embed/4H43ils7p6k
+description:
+vfx by me & @declanfzg
+directed by @lestynpark
+creative direction by @lestynpark @veezeworst
+gfx & production mgmt by @r9v3r
+edited by @lestynpark
+production company @imagecontrolstudios
+
+---
+
+name: Dream, Ivory - Tangerine Dream
+thumbnail: thumbnails/tangerine-dream.png
+vimeo_links:
+https://www.youtube.com/embed/0FRPgfcUgZ8
+description:
+vfx by me
+
+Producer: @producedbyaryan
+Production Company: @twistedhammock.co
+1st Assistant Director: @madelineabiera
+Director of Photography: @l3ibow
+Steadicam Op: @joshuadwsmith
+1st Assistant Camera: @nickfrmnowhre
+Gaffer: @randomrmd
+Key Grip: @zoharvaradi
+assist: @matt.rica
+Production Designer: @grahamcsmith
+Wardrobe Supervisor: @missjazlynv
+Stills Photographer: @imawni
+Key PA: Taytum Blake
+Set PA: Ryan Lee
+Girl: @bbydolleffie
+
+editor: @baemerola
+vfx: @johndrhm
+color: @ashton.color
+title card: @srikarswork
+
+---
+
+name: NBA YoungBoy - TOP TINGZ
+thumbnail: thumbnails/top-tingz.png
+vimeo_links:
+https://www.youtube.com/embed/z8ir6d2JZMI
+description:
+3d by me
+directed by @rozay.4k @creatorchris
+intro vfx & titles by @dco.fr
+vfx by @kxrrupt @a1frostt
+
+---
+
+name: BabyChiefDoit ft. Luh Tyler - Why Would I?
+thumbnail: thumbnails/why-would-i.png
+vimeo_links:
+https://www.youtube.com/embed/BzYsfSJOZa4
+description:
+3d by me
+title by @dco.fr
+directed by @rozay.4k
+vfx by @kxrrupt @a1frostt
+
+---
+
+name: devstacks - LMK U MADE IT HOME OKAY
+thumbnail: thumbnails/lmk-u-made-it-home-okay.png
+vimeo_links:
+https://www.youtube.com/embed/CfQVhlk_VdE
+description:
+vfx by me & @dco.fr
+directed by @forgetter
+edited by @unifiedatlantic
+
+---
+
+name: tana official recap
+thumbnail: thumbnails/tana.png
+vimeo_links:
+https://player.vimeo.com/video/339182963
+description:
+directed by me
+shot by me, @dco.fr, @damian.guenette
+edit & vfx @dco.fr
 
 ---
