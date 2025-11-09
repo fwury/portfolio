@@ -26,8 +26,8 @@
         }
 
         .navbar {
-            padding-top: 4rem;
-            padding-bottom: 4rem;
+            padding-top: 2rem;
+            padding-bottom: 2rem;
         }
 
         .navbar-brand {
@@ -100,8 +100,10 @@
             text-align: center;
         }
 
-        .portfolio-item:hover .overlay {
-            opacity: 1;
+        @media (hover: hover) {
+            .portfolio-item:hover .overlay {
+                opacity: 1;
+            }
         }
 
         .project-name {
@@ -144,6 +146,8 @@
             width: 100%;
             height: 100%;
             padding: 0;
+            /* FIX: Vertically centers the video and description containers */
+            align-items: center;
         }
 
         .close-button {
@@ -170,8 +174,9 @@
 
         .carousel-container {
             width: 75%;
-            height: 100%;
             position: relative;
+            /* FIX: Enforces 16:9 aspect ratio, removing the click trap */
+            aspect-ratio: 16 / 9;
         }
 
         .social-media-icon {
@@ -193,7 +198,8 @@
 
         .description-container {
             width: 25%;
-            height: 100%;
+            /* Let height be determined by content, up to a max */
+            max-height: 100%;
             padding: 0 2rem 1rem 2rem;
             overflow-y: auto;
         }
@@ -233,7 +239,6 @@
 
             .carousel-container {
                 width: 100%;
-                height: 100%;
             }
 
             .description-container {
@@ -265,7 +270,7 @@
 
     <main class="content-wrapper mb-5">
         <div id="portfolio-grid" class="portfolio-grid">
-            <!-- Portfolio items will be injected here by JavaScript -->
+            <!-- Portfolio items will be injected here -->
         </div>
     </main>
 
@@ -321,7 +326,7 @@
             const projectCarouselElement = document.getElementById('projectCarousel');
             const carousel = bootstrap.Carousel.getOrCreateInstance(projectCarouselElement);
 
-            let projectsData = []; // This will be filled by the parser
+            let projectsData = [];
 
             /**
              * Parses the human-readable text file into a structured project data array.
@@ -330,7 +335,6 @@
              */
             function parseProjectsTxt(text) {
                 const projects = [];
-                // Split the text into blocks for each project using '---' as a separator
                 const projectBlocks = text.split(/^\s*---\s*$/m).filter(block => block.trim() !== '');
 
                 projectBlocks.forEach(block => {
@@ -377,7 +381,6 @@
                 return projects;
             }
 
-            // Fetch and process the projects data
             async function loadProjects() {
                 try {
                     const response = await fetch('projects.txt');
@@ -393,7 +396,6 @@
             }
 
             loadProjects();
-
 
             function renderPortfolioGrid(projects) {
                 portfolioGrid.innerHTML = '';
