@@ -152,7 +152,6 @@
             width: 100%;
             height: 100%;
             padding: 0;
-            /* FIX: Changed to flex-start to top-align video and description */
             align-items: flex-start;
         }
 
@@ -203,7 +202,8 @@
 
         .description-container {
             width: 25%;
-            max-height: 100%;
+            /* FIX: Add explicit max-height to ensure scrolling works with flex-start alignment */
+            max-height: 80vh;
             padding: 0 2rem 1rem 2rem;
             overflow-y: auto;
         }
@@ -239,7 +239,6 @@
         @media (max-width: 992px) {
             .modal-body {
                 flex-direction: column;
-                /* Re-center for the column layout on mobile */
                 align-items: center;
                 justify-content: center;
             }
@@ -268,7 +267,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-black">
         <div class="container-fluid content-wrapper">
-            <a class="navbar-brand" href="#">JOHN DERham</a>
+            <a class="navbar-brand" href="#">JOHN DERHAM</a>
             <a class="nav-social-link" href="https://www.instagram.com/johndrhm" target="_blank">
                 <img class="social-media-icon" src="img/instagram.png" alt="Instagram">
             </a>
