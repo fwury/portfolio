@@ -52,8 +52,8 @@
             }
         }
 
-        /* FIX: Styling for the new Contact dropdown */
-        .dropdown-toggle, .dropdown-toggle:hover {
+        /* --- Custom Contact Styling --- */
+        .contact-button {
             color: #fff;
             font-family: 'DM Sans', sans-serif;
             text-decoration: none;
@@ -61,8 +61,16 @@
             border: none;
             font-size: 1rem;
             letter-spacing: 1px;
+            padding: .5rem 1rem;
+            /* FIX: Added transition for hover effect */
+            transition: opacity 0.3s ease;
         }
-        
+
+        /* FIX: Added hover state for contact button */
+        .contact-button:hover {
+            opacity: 0.7;
+        }
+
         .dropdown-toggle::after {
             vertical-align: 0.15em;
         }
@@ -70,16 +78,66 @@
         .dropdown-menu {
             background-color: #111;
             border: 1px solid #333;
+            padding: 0.5rem;
         }
 
         .dropdown-item {
             color: #ccc;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem 1rem;
+            /* FIX: Added transition for background color on hover */
+            transition: background-color 0.3s ease;
         }
 
-        .dropdown-item:hover, .dropdown-item:focus {
+        .dropdown-item img {
+            width: 16px;
+            height: 16px;
+        }
+
+        .dropdown-item:hover,
+        .dropdown-item:focus {
             color: #fff;
             background-color: #222;
         }
+
+        #contactModal {
+            display: none;
+            position: fixed;
+            z-index: 1100;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        #contactModal a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            transition: opacity 0.3s ease;
+        }
+
+        #contactModal a:hover {
+            opacity: 0.7;
+        }
+
+        #contactModal img {
+            width: 24px;
+            height: 24px;
+        }
+
+        /* --- End Custom Contact Styling --- */
+
 
         .portfolio-grid {
             display: grid;
@@ -288,17 +346,37 @@
     <nav class="navbar navbar-dark bg-black">
         <div class="container-fluid content-wrapper">
             <a class="navbar-brand" href="#">JOHN DERHAM</a>
-            
-            <!-- FIX: Replaced Instagram icon with a Contact dropdown -->
-            <div class="dropdown">
-                <button class="btn dropdown-toggle" type="button" id="contactDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+
+            <div class="dropdown d-none d-lg-block">
+                <button class="btn dropdown-toggle contact-button" type="button" id="contactDropdown"
+                    data-bs-toggle="dropdown" aria-expanded="false">
                     CONTACT ME
                 </button>
-                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="contactDropdown">
-                    <li><a class="dropdown-item" href="https://www.instagram.com/johndrhm" target="_blank">Instagram</a></li>
-                    <li><a class="dropdown-item" href="mailto:johnderhamtoronto@gmail.com">johnderhamtoronto@gmail.com</a></li>
+                <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end" aria-labelledby="contactDropdown">
+                    <li>
+                        <a class="dropdown-item" href="https://www.instagram.com/johndrhm" target="_blank">
+                            <img src="img/instagram.png" alt="Instagram">
+                            <span>Instagram</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="https://www.tiktok.com/@johndrhm" target="_blank">
+                            <img src="img/tiktok.png" alt="TikTok">
+                            <span>TikTok</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="mailto:johnderhamtoronto@gmail.com">
+                            <img src="img/email.png" alt="Email">
+                            <span>johnderhamtoronto@gmail.com</span>
+                        </a>
+                    </li>
                 </ul>
             </div>
+
+            <button id="mobileContactButton" class="btn contact-button d-lg-none" type="button">
+                CONTACT ME
+            </button>
         </div>
     </nav>
 
@@ -308,9 +386,9 @@
         </div>
     </main>
 
-    <!-- The Modal -->
+    <!-- Project Viewer Modal -->
     <div id="projectModal" class="modal">
-        <button id="closeModalButton" class="close-button">
+        <button id="closeProjectModalButton" class="close-button">
             <img src="img/x.png" alt="Close">
         </button>
         <div class="modal-content">
@@ -343,6 +421,25 @@
         </div>
     </div>
 
+    <!-- Mobile Contact Modal -->
+    <div id="contactModal">
+        <button id="closeContactModalButton" class="close-button">
+            <img src="img/x.png" alt="Close">
+        </button>
+        <a href="https://www.instagram.com/johndrhm" target="_blank">
+            <img src="img/instagram.png" alt="Instagram">
+            <span>Instagram</span>
+        </a>
+        <a href="https://www.tiktok.com/@johndrhm" target="_blank">
+            <img src="img/tiktok.png" alt="TikTok">
+            <span>TikTok</span>
+        </a>
+        <a href="mailto:johnderhamtoronto@gmail.com">
+            <img src="img/email.png" alt="Email">
+            <span>johnderhamtoronto@gmail.com</span>
+        </a>
+    </div>
+
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
@@ -350,9 +447,10 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
+            // Project Modal Elements
             const portfolioGrid = document.getElementById('portfolio-grid');
-            const modal = document.getElementById('projectModal');
-            const closeModalButton = document.getElementById('closeModalButton');
+            const projectModal = document.getElementById('projectModal');
+            const closeProjectModalButton = document.getElementById('closeProjectModalButton');
             const projectTitle = document.getElementById('projectTitle');
             const projectDescription = document.getElementById('projectDescription');
             const carouselInner = document.querySelector('#projectCarousel .carousel-inner');
@@ -360,63 +458,48 @@
             const projectCarouselElement = document.getElementById('projectCarousel');
             const carousel = bootstrap.Carousel.getOrCreateInstance(projectCarouselElement);
 
+            // Contact Modal Elements
+            const contactModal = document.getElementById('contactModal');
+            const mobileContactButton = document.getElementById('mobileContactButton');
+            const closeContactModalButton = document.getElementById('closeContactModalButton');
+
             let projectsData = [];
             let currentProjectIndex = -1;
 
+            // --- Project Data Handling ---
             function parseProjectsTxt(text) {
                 const projects = [];
                 const projectBlocks = text.split(/^\s*---\s*$/m).filter(block => block.trim() !== '');
 
                 projectBlocks.forEach(block => {
                     const lines = block.trim().split('\n');
-                    const project = {
-                        name: '',
-                        thumbnail: '',
-                        vimeo_links: [],
-                        description: ''
-                    };
-
+                    const project = { name: '', thumbnail: '', vimeo_links: [], description: '' };
                     let currentKey = null;
                     let descriptionLines = [];
-
                     lines.forEach(line => {
                         const nameMatch = line.match(/^name:\s*(.*)/);
                         const thumbnailMatch = line.match(/^thumbnail:\s*(.*)/);
                         const vimeoMatch = line.match(/^vimeo_links:/);
                         const descriptionMatch = line.match(/^description:/);
-
-                        if (nameMatch) {
-                            project.name = nameMatch[1].trim();
-                            currentKey = null;
-                        } else if (thumbnailMatch) {
-                            project.thumbnail = thumbnailMatch[1].trim();
-                            currentKey = null;
-                        } else if (vimeoMatch) {
-                            currentKey = 'vimeo_links';
-                        } else if (descriptionMatch) {
-                            currentKey = 'description';
-                        } else if (currentKey) {
-                            if (currentKey === 'vimeo_links' && line.trim()) {
-                                project.vimeo_links.push(line.trim());
-                            } else if (currentKey === 'description') {
-                                descriptionLines.push(line);
-                            }
+                        if (nameMatch) { project.name = nameMatch[1].trim(); currentKey = null; }
+                        else if (thumbnailMatch) { project.thumbnail = thumbnailMatch[1].trim(); currentKey = null; }
+                        else if (vimeoMatch) { currentKey = 'vimeo_links'; }
+                        else if (descriptionMatch) { currentKey = 'description'; }
+                        else if (currentKey) {
+                            if (currentKey === 'vimeo_links' && line.trim()) { project.vimeo_links.push(line.trim()); }
+                            else if (currentKey === 'description') { descriptionLines.push(line); }
                         }
                     });
-
                     project.description = descriptionLines.join('\n');
                     projects.push(project);
                 });
-
                 return projects;
             }
 
             async function loadProjects() {
                 try {
                     const response = await fetch('projects.txt');
-                    if (!response.ok) {
-                        throw new Error(`HTTP error! status: ${response.status}`);
-                    }
+                    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
                     const textData = await response.text();
                     projectsData = parseProjectsTxt(textData);
                     renderPortfolioGrid(projectsData);
@@ -424,60 +507,46 @@
                     console.error("Could not load or parse projects.txt:", error);
                 }
             }
-
             loadProjects();
 
+            // --- UI Rendering and Modal Logic ---
             function renderPortfolioGrid(projects) {
                 portfolioGrid.innerHTML = '';
                 projects.forEach((project, index) => {
                     const item = document.createElement('div');
                     item.className = 'portfolio-item';
                     item.dataset.index = index;
-
-                    item.innerHTML = `
-                            <div class="portfolio-image" style="background-image: url('${project.thumbnail}')"></div>
-                            <div class="overlay">
-                                <div class="project-name">${project.name}</div>
-                            </div>
-                        `;
-
-                    item.addEventListener('click', () => openModal(index));
+                    item.innerHTML = `<div class="portfolio-image" style="background-image: url('${project.thumbnail}')"></div><div class="overlay"><div class="project-name">${project.name}</div></div>`;
+                    item.addEventListener('click', () => openProjectModal(index));
                     portfolioGrid.appendChild(item);
                 });
             }
 
-            function openModal(index) {
+            function openProjectModal(index) {
                 currentProjectIndex = index;
-
                 const project = projectsData[index];
                 projectTitle.textContent = project.name;
                 projectDescription.textContent = project.description;
-
                 carouselInner.innerHTML = '';
                 carouselIndicators.innerHTML = '';
-
                 project.vimeo_links.forEach((link, i) => {
                     const carouselItem = document.createElement('div');
                     carouselItem.className = `carousel-item ${i === 0 ? 'active' : ''}`;
                     carouselItem.innerHTML = `<iframe src="${link}" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>`;
                     carouselInner.appendChild(carouselItem);
-
                     const indicator = document.createElement('button');
                     indicator.type = 'button';
                     indicator.dataset.bsTarget = '#projectCarousel';
                     indicator.dataset.bsSlideTo = i;
-                    if (i === 0) {
-                        indicator.classList.add('active');
-                    }
+                    if (i === 0) indicator.classList.add('active');
                     carouselIndicators.appendChild(indicator);
                 });
-
                 carousel.to(0);
-                modal.classList.add('is-open');
+                projectModal.classList.add('is-open');
             }
 
-            function closeModal() {
-                modal.classList.remove('is-open');
+            function closeProjectModal() {
+                projectModal.classList.remove('is-open');
                 const iframes = carouselInner.querySelectorAll('iframe');
                 iframes.forEach(iframe => {
                     const src = iframe.src;
@@ -485,31 +554,32 @@
                 });
             }
 
-            closeModalButton.addEventListener('click', closeModal);
-
-            window.onclick = function (event) {
-                if (event.target == modal) {
-                    closeModal();
+            // Event Listeners for Project Modal
+            closeProjectModalButton.addEventListener('click', closeProjectModal);
+            projectModal.addEventListener('click', function (event) {
+                if (event.target === projectModal) {
+                    closeProjectModal();
                 }
-            }
+            });
 
+            // Event Listeners for Contact Modal
+            mobileContactButton.addEventListener('click', () => { contactModal.style.display = 'flex'; });
+            closeContactModalButton.addEventListener('click', () => { contactModal.style.display = 'none'; });
+
+            // Keyboard navigation
             document.addEventListener('keydown', function (event) {
-                if (!modal.classList.contains('is-open')) return;
-
-                switch (event.key) {
-                    case 'Escape':
-                        closeModal();
-                        break;
-                    case 'ArrowRight':
-                        if (currentProjectIndex < projectsData.length - 1) {
-                            openModal(currentProjectIndex + 1);
-                        }
-                        break;
-                    case 'ArrowLeft':
-                        if (currentProjectIndex > 0) {
-                            openModal(currentProjectIndex - 1);
-                        }
-                        break;
+                if (projectModal.classList.contains('is-open')) {
+                    switch (event.key) {
+                        case 'Escape': closeProjectModal(); break;
+                        case 'ArrowRight':
+                            if (currentProjectIndex < projectsData.length - 1) openProjectModal(currentProjectIndex + 1);
+                            break;
+                        case 'ArrowLeft':
+                            if (currentProjectIndex > 0) openProjectModal(currentProjectIndex - 1);
+                            break;
+                    }
+                } else if (contactModal.style.display === 'flex' && event.key === 'Escape') {
+                    contactModal.style.display = 'none';
                 }
             });
         });
