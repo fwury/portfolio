@@ -49,18 +49,7 @@
             height: 100%;
             object-fit: cover;
             z-index: 0;
-        }
-
-        /* Optional: Dark overlay to make nav/logo pop if video is bright */
-        .hero-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.3);
-            z-index: 1;
-            pointer-events: none;
+            filter: brightness(50%);
         }
 
         .navbar {
@@ -392,6 +381,63 @@
                 right: 1rem;
             }
         }
+
+        .scroll-prompt {
+            position: fixed;
+            z-index: 9999999;
+            top: 85%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            text-align: center;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        .scroll-prompt span {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+            color: #fff;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+        }
+
+        .scroll-prompt img {
+            width: 30px;
+            height: auto;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.8));
+            animation: float 3s ease-in-out infinite;
+        }
+
+        /* Hide class for JS to toggle */
+        .scroll-prompt.hidden {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(5px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        /* Hide class for JS to toggle */
+        .scroll-prompt.hidden {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
     </style>
 </head>
 
@@ -403,9 +449,6 @@
         <video id="hero-video" autoplay loop muted playsinline>
             <source src="img/pers6na.mp4" type="video/mp4">
         </video>
-
-        <!-- Overlay to darken video for menu visibility -->
-        <div class="hero-overlay"></div>
 
         <!-- Navigation -->
         <nav class="navbar navbar-dark bg-transparent">
@@ -447,6 +490,12 @@
                 <button id="mobileContactButton" class="btn contact-button d-lg-none" type="button">
                     CONTACT ME
                 </button>
+
+                <!-- Scroll Prompt -->
+                <div id="scrollPrompt" class="scroll-prompt">
+                    <span>Scroll to see more work</span>
+                    <img src="img/arrow.png" alt="Scroll Down">
+                </div>
             </div>
         </nav>
     </header>
@@ -517,6 +566,16 @@
         crossorigin="anonymous"></script>
 
     <script>
+        // Scroll Prompt Logic
+        const scrollPrompt = document.getElementById('scrollPrompt');
+
+        window.addEventListener('scroll', function () {
+            // If user scrolls down, hide the prompt
+            if (window.scrollY > 20) {
+                scrollPrompt.classList.add('hidden');
+            }
+        });
+
         document.addEventListener('DOMContentLoaded', function () {
             // Project Modal Elements
             const portfolioGrid = document.getElementById('portfolio-grid');
