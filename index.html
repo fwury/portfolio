@@ -16,8 +16,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Special+Gothic+Expanded+One&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000"
         rel="stylesheet">
 
     <!-- Custom CSS -->
@@ -34,11 +33,12 @@
             position: relative;
             width: 100%;
             height: 100vh;
-            /* Full viewport height */
             overflow: hidden;
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
+            cursor: pointer;
+            /* Indicates the hero is clickable */
         }
 
         #hero-video {
@@ -52,17 +52,69 @@
             filter: brightness(50%);
         }
 
+        /* --- New Hero Logos Styling --- */
+        .hero-logos {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4rem;
+            z-index: 2;
+            /* Sits above video, below Nav */
+            pointer-events: none;
+            /* Allows click to pass through to the header container */
+            width: 100%;
+            padding: 0 1rem;
+        }
+
+        /* Re-enable pointer events for the logo links */
+        .hero-logos a {
+            pointer-events: auto;
+        }
+
+        .hero-logos img {
+            height: 35px;
+            width: auto;
+            object-fit: contain;
+            filter: brightness(0) invert(1);
+            /* Ensures logos are white if source isn't */
+            transition: opacity 0.3s ease;
+        }
+
+        .hero-logos a:hover img {
+            opacity: 0.7;
+        }
+
+        @media (max-width: 768px) {
+            .hero-logos {
+                gap: 2rem;
+                flex-wrap: wrap;
+            }
+
+            .hero-logos img {
+                height: 25px;
+            }
+        }
+
         .navbar {
             padding-top: 4rem;
             padding-bottom: 4rem;
             position: relative;
             z-index: 10;
-            /* Ensures Nav sits on top of video */
             width: 100%;
+            pointer-events: none;
+            /* Disable pointer events on wrapper */
+        }
+
+        /* Re-enable pointer events for actual interactive nav elements */
+        .navbar .container-fluid>* {
+            pointer-events: auto;
         }
 
         .navbar-brand {
-            /* Text styles removed, added generic transition */
             transition: opacity 0.3s ease;
             display: flex;
             align-items: center;
@@ -70,7 +122,6 @@
 
         .navbar-brand img {
             max-height: 50px;
-            /* Adjust based on logo aspect ratio */
             width: auto;
         }
 
@@ -223,7 +274,7 @@
         }
 
         .project-name {
-            font-family: 'Special Gothic Expanded One', sans-serif;
+            font-family: 'DM Sans', sans-serif;
             color: white;
             font-size: 1.25rem;
             padding: 1rem;
@@ -311,7 +362,8 @@
             height: 100%;
         }
 
-        iframe {
+        iframe,
+        img.carousel-img {
             width: 100%;
             height: 100%;
             border: none;
@@ -325,8 +377,17 @@
             background: rgba(0, 0, 0, 0.5);
         }
 
+        /* --- Hero Mode Modal Styles (No text, full width) --- */
+        .modal.hero-mode .description-container {
+            display: none !important;
+        }
+
+        .modal.hero-mode .carousel-container {
+            width: 100% !important;
+        }
+
         #projectTitle {
-            font-family: 'Special Gothic Expanded One', sans-serif;
+            font-family: 'DM Sans', sans-serif;
             font-size: 1.8rem;
             font-weight: bold;
             padding-bottom: 0.75rem;
@@ -390,6 +451,8 @@
             gap: 1rem;
             text-align: center;
             transition: opacity 0.3s ease, visibility 0.3s ease;
+            pointer-events: none;
+            /* Let scroll prompt not block clicks */
         }
 
         .scroll-prompt span {
@@ -407,7 +470,6 @@
             animation: float 3s ease-in-out infinite;
         }
 
-        /* Hide class for JS to toggle */
         .scroll-prompt.hidden {
             opacity: 0;
             visibility: hidden;
@@ -427,13 +489,6 @@
                 transform: translateY(0);
             }
         }
-
-        /* Hide class for JS to toggle */
-        .scroll-prompt.hidden {
-            opacity: 0;
-            visibility: hidden;
-            pointer-events: none;
-        }
     </style>
 </head>
 
@@ -445,6 +500,13 @@
         <video id="hero-video" autoplay loop muted playsinline>
             <source src="img/reel.mp4" type="video/mp4">
         </video>
+
+        <!-- Centered Logos Overlay -->
+        <div class="hero-logos">
+            <a href="https://storytolds.co/" target="_blank"><img src="img/storytolds.png" alt="Storytolds"></a>
+            <a href="https://redbullrecords.com/" target="_blank"><img src="img/redbull.png" alt="Red Bull Records"></a>
+            <a href="https://ditch.la/" target="_blank"><img src="img/ditch.png" alt="Ditch"></a>
+        </div>
 
         <!-- Navigation -->
         <nav class="navbar navbar-dark bg-transparent">
@@ -490,7 +552,7 @@
 
                 <!-- Scroll Prompt -->
                 <div id="scrollPrompt" class="scroll-prompt">
-                    <span>Scroll to see more work</span>
+                    <!-- <span>Scroll to see more work</span> -->
                     <img src="img/arrow.png" alt="Scroll Down">
                 </div>
             </div>
@@ -565,6 +627,7 @@
     <script>
         // Scroll Prompt Logic
         const scrollPrompt = document.getElementById('scrollPrompt');
+        const heroHeader = document.getElementById('hero-header');
 
         window.addEventListener('scroll', function () {
             // If user scrolls down, hide the prompt
@@ -600,15 +663,18 @@
 
                 projectBlocks.forEach(block => {
                     const lines = block.trim().split('\n');
-                    const project = { name: '', thumbnail: '', vimeo_links: [], description: '' };
+                    const project = { name: '', hoverText: '', thumbnail: '', vimeo_links: [], description: '' };
                     let currentKey = null;
                     let descriptionLines = [];
                     lines.forEach(line => {
                         const nameMatch = line.match(/^name:\s*(.*)/);
+                        const hoverTextMatch = line.match(/^hover_text:\s*(.*)/);
                         const thumbnailMatch = line.match(/^thumbnail:\s*(.*)/);
                         const vimeoMatch = line.match(/^vimeo_links:/);
                         const descriptionMatch = line.match(/^description:/);
+
                         if (nameMatch) { project.name = nameMatch[1].trim(); currentKey = null; }
+                        else if (hoverTextMatch) { project.hoverText = hoverTextMatch[1].trim(); currentKey = null; }
                         else if (thumbnailMatch) { project.thumbnail = thumbnailMatch[1].trim(); currentKey = null; }
                         else if (vimeoMatch) { currentKey = 'vimeo_links'; }
                         else if (descriptionMatch) { currentKey = 'description'; }
@@ -643,24 +709,44 @@
                     const item = document.createElement('div');
                     item.className = 'portfolio-item';
                     item.dataset.index = index;
-                    item.innerHTML = `<div class="portfolio-image" style="background-image: url('${project.thumbnail}')"></div><div class="overlay"><div class="project-name">${project.name}</div></div>`;
+
+                    // Use hover_text if available, fallback to name
+                    const hoverDisplay = project.hoverText || project.name;
+
+                    item.innerHTML = `<div class="portfolio-image" style="background-image: url('${project.thumbnail}')"></div><div class="overlay"><div class="project-name">${hoverDisplay}</div></div>`;
                     item.addEventListener('click', () => openProjectModal(index));
                     portfolioGrid.appendChild(item);
                 });
             }
 
+            // Function to open standard project
             function openProjectModal(index) {
                 currentProjectIndex = index;
                 const project = projectsData[index];
+
+                // Ensure text is visible for normal projects
+                projectModal.classList.remove('hero-mode');
+
                 projectTitle.textContent = project.name;
                 projectDescription.textContent = project.description;
                 carouselInner.innerHTML = '';
                 carouselIndicators.innerHTML = '';
+
                 project.vimeo_links.forEach((link, i) => {
                     const carouselItem = document.createElement('div');
                     carouselItem.className = `carousel-item ${i === 0 ? 'active' : ''}`;
-                    carouselItem.innerHTML = `<iframe src="${link}" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>`;
+
+                    // Check if link ends with an image extension
+                    const isImage = link.match(/\.(jpeg|jpg|gif|png|webp)$/i);
+
+                    if (isImage) {
+                        carouselItem.innerHTML = `<img src="${link}" class="d-block w-100 h-100" style="object-fit: contain;">`;
+                    } else {
+                        carouselItem.innerHTML = `<iframe src="${link}" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>`;
+                    }
+
                     carouselInner.appendChild(carouselItem);
+
                     const indicator = document.createElement('button');
                     indicator.type = 'button';
                     indicator.dataset.bsTarget = '#projectCarousel';
@@ -672,13 +758,37 @@
                 projectModal.classList.add('is-open');
             }
 
+            // Function to open Hero Reel
+            function openHeroReel() {
+                currentProjectIndex = -1; // No index in the grid
+
+                // Set Modal to Hero Mode
+                projectModal.classList.add('hero-mode');
+
+                carouselInner.innerHTML = '';
+                carouselIndicators.innerHTML = '';
+
+                const reelLink = "https://player.vimeo.com/video/1145454621";
+
+                const carouselItem = document.createElement('div');
+                carouselItem.className = 'carousel-item active';
+                carouselItem.innerHTML = `<iframe src="${reelLink}" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>`;
+                carouselInner.appendChild(carouselItem);
+
+                projectModal.classList.add('is-open');
+            }
+
             function closeProjectModal() {
                 projectModal.classList.remove('is-open');
-                const iframes = carouselInner.querySelectorAll('iframe');
-                iframes.forEach(iframe => {
-                    const src = iframe.src;
-                    iframe.src = src;
-                });
+
+                // Completely clear the HTML content to destroy iframes and stop sound instantly
+                carouselInner.innerHTML = '';
+                carouselIndicators.innerHTML = '';
+
+                // Remove hero mode class for safety
+                setTimeout(() => {
+                    projectModal.classList.remove('hero-mode');
+                }, 300);
             }
 
             // Event Listeners for Project Modal
@@ -687,6 +797,15 @@
                 if (event.target === projectModal) {
                     closeProjectModal();
                 }
+            });
+
+            // Event Listener for Hero Click
+            heroHeader.addEventListener('click', function (e) {
+                // Check if click was on a link or button
+                if (e.target.closest('a') || e.target.closest('button')) {
+                    return;
+                }
+                openHeroReel();
             });
 
             // Event Listeners for Contact Modal
@@ -699,10 +818,10 @@
                     switch (event.key) {
                         case 'Escape': closeProjectModal(); break;
                         case 'ArrowRight':
-                            if (currentProjectIndex < projectsData.length - 1) openProjectModal(currentProjectIndex + 1);
+                            if (currentProjectIndex !== -1 && currentProjectIndex < projectsData.length - 1) openProjectModal(currentProjectIndex + 1);
                             break;
                         case 'ArrowLeft':
-                            if (currentProjectIndex > 0) openProjectModal(currentProjectIndex - 1);
+                            if (currentProjectIndex !== -1 && currentProjectIndex > 0) openProjectModal(currentProjectIndex - 1);
                             break;
                     }
                 } else if (contactModal.style.display === 'flex' && event.key === 'Escape') {

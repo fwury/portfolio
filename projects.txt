@@ -1,30 +1,12 @@
-name: ziPbby - Bombay
-thumbnail: thumbnails/bombay.png
-vimeo_links:
-https://player.vimeo.com/video/1125948578
-https://player.vimeo.com/video/1125948558
-https://player.vimeo.com/video/1125948594
-https://player.vimeo.com/video/1125948620
-description:
-
-Director – @chriswbradford 
-1st AD – @yardstickbwoy
-2nd AD – @gaziwrld
-Bcam – @johndrhm and @declanfzg 
-Editor – @oasisnate 
-Colorist – @edgarreynag 
-VFX – @johndrhm 
-Title – @aloran.psd 
-Stylist – @ryanleutz
-
----
-
 name: Booster Juice
+hover_text: Booster Juice • 202K views
 thumbnail: thumbnails/booster-juice.png
 vimeo_links:
 https://player.vimeo.com/video/1125941623
 description:
-VFX / Animation – @johndrhm @declanfzg
+https://www.youtube.com/watch?v=RWIqGBzpmKU
+
+VFX / Animation – @johndrhm
 
 Producer – @emilioreyes06
 Director – @mmmaaaaaaax
@@ -55,32 +37,61 @@ Production Company – @lucidfilmco
 
 ---
 
-name: twinuzis - Waiting For Love!
-thumbnail: thumbnails/waiting-for-love.png
+name: ziPbby - Bombay
+hover_text: Bombay • 193K views
+thumbnail: thumbnails/bombay.png
 vimeo_links:
-https://www.youtube.com/embed/hFkoJwfDEK0
+https://player.vimeo.com/video/1125948578
+https://player.vimeo.com/video/1125948558
+https://player.vimeo.com/video/1125948594
+https://player.vimeo.com/video/1125948620
 description:
-VFX – @johndrhm @declanfzg
-Director – @jacksonmagnabosco @keatondjones
-Title – @declanfzg
-3D – @sp1ll
+https://www.youtube.com/watch?v=w_UQbm3s50g
+
+VFX – @johndrhm
+Director – @chriswbradford
+1st AD – @yardstickbwoy
+2nd AD – @gaziwrld
+Bcam – @johndrhm @declanfzg 
+Editor – @oasisnate 
+Colorist – @edgarreynag 
+Title – @aloran.psd 
+Stylist – @ryanleutz
 
 ---
 
-name: Babyface Ray, LUCKI - Standing on Business
-thumbnail: thumbnails/standing-on-business.png
+name: rouri404 - videostar
+hover_text: Red Bull Records
+thumbnail: thumbnails/videostar.png
 vimeo_links:
-https://www.youtube.com/embed/xt74rwLdeyg
+https://www.youtube.com/embed/vdC9KPCSyH8
+img/videostar-credits.png
 description:
-VFX – @johndrhm @declanfzg
-Director – @lestynpark
-Titles – @declanfzg @r9v3r
-Color – @joeade_
-Production Company – @imagecontrolstudios
+VFX / Color - @johndrhm
+Director – @chriswbradford
+AD – @gaziwrld
+PA – @dylbradshaw
+Producer – @31sentinel @evansasha_
+Talent – @evrying
+Label – @redbullrecords
+
+---
+
+name: NBA YoungBoy - TOP TINGZ
+hover_text: TOP TINGZ • 14M views
+thumbnail: thumbnails/top-tingz.png
+vimeo_links:
+https://www.youtube.com/embed/z8ir6d2JZMI
+description:
+3D – @johndrhm
+Directors – @rozay.4k @creatorchris
+Intro VFX & Titles – @declanfzg
+VFX – @kxrrupt @a1frostt
 
 ---
 
 name: VEEZE - L.O.A.T
+hover_text: L.O.A.T • 4.2M views
 thumbnail: thumbnails/loat.png
 vimeo_links:
 https://www.youtube.com/embed/4H43ils7p6k
@@ -94,7 +105,47 @@ Production Company – @imagecontrolstudios
 
 ---
 
+name: Babyface Ray, LUCKI - Standing on Business
+hover_text: Standing on Business • 1.7M views
+thumbnail: thumbnails/standing-on-business.png
+vimeo_links:
+https://www.youtube.com/embed/xt74rwLdeyg
+description:
+VFX – @johndrhm @declanfzg
+Director – @lestynpark
+Titles – @declanfzg @r9v3r
+Color – @joeade_
+Production Company – @imagecontrolstudios
+
+---
+
+name: BabyChiefDoit ft. Luh Tyler - Why Would I?
+hover_text: Why Would I? • 931K views
+thumbnail: thumbnails/why-would-i.png
+vimeo_links:
+https://www.youtube.com/embed/BzYsfSJOZa4
+description:
+3D – @johndrhm
+Title – @declanfzg
+Director – @rozay.4k
+VFX – @kxrrupt @a1frostt
+
+---
+
+name: devstacks - LMK U MADE IT HOME OKAY
+hover_text: LMK U MADE IT HOME OKAY • 131K views
+thumbnail: thumbnails/lmk-u-made-it-home-okay.png
+vimeo_links:
+https://www.youtube.com/embed/CfQVhlk_VdE
+description:
+VFX – @johndrhm @declanfzg
+Director – @forgetter
+Editor – @unifiedatlantic
+
+---
+
 name: Dream, Ivory - Tangerine Dream
+hover_text: Tangerine Dream • 130K views
 thumbnail: thumbnails/tangerine-dream.png
 vimeo_links:
 https://www.youtube.com/embed/0FRPgfcUgZ8
@@ -124,37 +175,15 @@ Title Card – @srikarswork
 
 ---
 
-name: NBA YoungBoy - TOP TINGZ
-thumbnail: thumbnails/top-tingz.png
+name: twinuzis - Waiting For Love!
+hover_text: Waiting For Love! • 100K views
+thumbnail: thumbnails/waiting-for-love.png
 vimeo_links:
-https://www.youtube.com/embed/z8ir6d2JZMI
-description:
-3D – @johndrhm
-Directors – @rozay.4k @creatorchris
-Intro VFX & Titles – @declanfzg
-VFX – @kxrrupt @a1frostt
-
----
-
-name: BabyChiefDoit ft. Luh Tyler - Why Would I?
-thumbnail: thumbnails/why-would-i.png
-vimeo_links:
-https://www.youtube.com/embed/BzYsfSJOZa4
-description:
-3D – @johndrhm
-Title – @declanfzg
-Director – @rozay.4k
-VFX – @kxrrupt @a1frostt
-
----
-
-name: devstacks - LMK U MADE IT HOME OKAY
-thumbnail: thumbnails/lmk-u-made-it-home-okay.png
-vimeo_links:
-https://www.youtube.com/embed/CfQVhlk_VdE
+https://www.youtube.com/embed/hFkoJwfDEK0
 description:
 VFX – @johndrhm @declanfzg
-Director – @forgetter
-Editor – @unifiedatlantic
+Director – @jacksonmagnabosco @keatondjones
+Title – @declanfzg
+3D – @sp1ll
 
 ---
