@@ -13,9 +13,9 @@ VFX – @johndrhm
 Director – @chriswbradford
 1st AD – @yardstickbwoy
 2nd AD – @gaziwrld
-Bcam – @johndrhm @declanfzg 
+B-Cam – @johndrhm @declanfzg 
 Editor – @oasisnate 
-Colorist – @edgarreynag 
+Color – @edgarreynag 
 Title – @aloran.psd 
 Stylist – @ryanleutz
 
@@ -93,6 +93,44 @@ Production Company – @imagecontrolstudios
 
 ---
 
+name: AP Dhillon & Shinda Kahlon - HITMEN
+hover_text: HITMEN • 1.3M views
+thumbnail: thumbnails/hitmen.jpg
+vimeo_links:
+https://www.youtube.com/embed/wiKCVac9N78
+description:
+Scene Clean Up – @johndrhm 
+
+Director – @aditdixit
+Producer / AD – @raywxllis
+DP – @camerongnslvs
+1st AC – @70mm_
+Gaffer – @lonetree 
+Key Grip – @dir_artemio
+Grip – @anthonyjmangini
+Steadicam Operator – @steadieafoo
+2nd AD – @directorcarrington
+Production Designer – @ohh.arch
+Art Leadman – @wade.la26
+Wardrobe Stylist – @jennademaio.stylist 
+PA – @nicoramosfilms @therealjonathandimas 
+BTS – @colematthews408
+
+Editor – @parkefox
+Colorist – @jaytheeye
+VFX Supervisor / Compositor – @parkefox 
+VFX Lead / 3D Generalist – @sovann.sk 
+Water Simulation Artist – @yusufkicanoglu 
+Dog Chain 3D Generalist – @byandregv  
+Money Simulation Artist – @lksvisuals
+Mixed Media – @declanfzg
+
+Production Company – @redfoxprod 
+Location – @cinepacks.studios
+Casting Director – @apecastings
+
+---
+
 name: BabyChiefDoit ft. Luh Tyler - Why Would I?
 hover_text: Why Would I? • 931K views
 thumbnail: thumbnails/why-would-i.png
@@ -130,7 +168,7 @@ Producer – @producedbyaryan
 Production Company – @twistedhammock.co
 1st AD – @madelineabiera
 DP – @l3ibow
-Steadicam Op – @joshuadwsmith
+Steadicam Operator – @joshuadwsmith
 1st AC – @nickfrmnowhre
 Gaffer – @randomrmd
 Key Grip – @zoharvaradi
@@ -156,6 +194,66 @@ vimeo_links:
 https://www.youtube.com/embed/hFkoJwfDEK0
 description:
 VFX – @johndrhm @declanfzg
-Director – @jacksonmagnabosco @keatondjones
+Directors – @jacksonmagnabosco @keatondjones
 Title – @declanfzg
 3D – @sp1ll
+
+---
+
+name: $wag Nightmare - mercedes
+hover_text: mercedes • 68K views
+thumbnail: thumbnails/mercedes.jpg
+vimeo_links:
+https://www.youtube.com/embed/WdCew4JX4Gg
+description:
+VFX – @johndrhm @mattthew.mercer
+
+Directors – @shuuwori @augustaugstaugust
+Producer / AD – @michael_the_sauce_god_ 
+DP – @athul.obla 
+1st AC – @jpegcole
+Steadicam Operator – @steadi_donny
+FPV Drone – @jelly.flp
+FPV Camera Operator – @bengampelll 
+Gaffer – @legertaylor
+Key Grip – @victorienv
+Best Boy Electric – @kaileyhorito
+Best Boy Grip – @dank_duva 
+Swing – @xanderfernandez_ @doan.haydenz
+PA – @mnd_david @erumasglue @yahirsfilms
+BTS – @xanderfernandez_ @mnd_david
+
+Stylist – @stylingbrookie
+Pants & Jackets – @insain.worldwide @slovakiandreams
+Top – @jeanpaulgaultier
+Chain – @hystericglamour_tokyo
+Hair & Makeup – @myheartishealing
+
+Editor – @shuuwori
+Additional Editors – @tliiiam @n0ahneko
+Title GFX – @lqkii
+Title Animation – @shuuwori
+Color – @shuuwori
+Sound Design – @noahhirsch_
+
+Production Company – @storytolds
+
+---
+
+name: AJ Vitanza - DON'T WANNA KNOW
+hover_text: DON'T WANNA KNOW • 9.2K views
+thumbnail: thumbnails/dont-wanna-know.jpg
+vimeo_links:
+https://www.youtube.com/embed/fvKDFVza9EM
+description:
+VFX – @johndrhm
+
+Director – @chriswbradford
+AD – John Taylor
+Editor – @chriswbradford
+Title – @awrnuv
+
+Writer – @ajvitanza
+Producer – @songsbystefano
+Mixer – @teezio
+Master – @ohadnissimmastering
