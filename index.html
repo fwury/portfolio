@@ -172,6 +172,22 @@
             width: 100%;
         }
 
+        /* Spacing between the dynamic grid and the new static row */
+        .booster-extras {
+            margin-top: 1.5rem;
+            display: flex;
+            /* Use Flexbox for equal height */
+            gap: 1.5rem;
+            /* Match grid gap */
+            width: 100%;
+            /* 
+               This aspect ratio sets the height of the row relative to its width.
+               21/9 creates a nice wide rectangular block that accommodates 
+               both the portrait and landscape images well.
+            */
+            aspect-ratio: 21 / 9;
+        }
+
         /* --- Custom Contact Styling --- */
         .contact-button {
             color: #fff;
@@ -265,6 +281,21 @@
             .portfolio-grid {
                 grid-template-columns: 1fr;
             }
+
+            /* Mobile styles for the extras row */
+            .booster-extras {
+                flex-direction: column;
+                aspect-ratio: auto;
+                /* Allow auto height for stacking */
+            }
+
+            .static-left,
+            .static-right {
+                width: 100% !important;
+                height: auto;
+                aspect-ratio: 16 / 9;
+                /* Revert to standard rectangle on mobile */
+            }
         }
 
         .portfolio-item {
@@ -278,11 +309,28 @@
             background-position: center;
         }
 
-        /* For Booster Section */
+        /* For Booster Section Dynamic Images */
         .booster-image {
             aspect-ratio: 1 / 1;
             background-size: cover;
             background-position: center;
+        }
+
+        /* For Booster Section Static Images */
+        .static-item {
+            background-size: cover;
+            background-position: center;
+            height: 100%;
+            /* Force fill height of the flex row */
+        }
+
+        /* Width proportions to match the visual reference */
+        .static-left {
+            width: 38%;
+        }
+
+        .static-right {
+            width: 62%;
         }
 
         .portfolio-item .overlay {
@@ -600,8 +648,15 @@
     <!-- Booster Juice Section -->
     <section id="booster-section">
         <div class="content-wrapper">
+            <!-- Dynamic Booster Items (Top Row) -->
             <div id="booster-grid" class="portfolio-grid">
-                <!-- Booster items injected here -->
+                <!-- JS will inject items here -->
+            </div>
+
+            <!-- Static Booster Items (Bottom Row) -->
+            <div class="booster-extras">
+                <div class="static-item static-left" style="background-image: url('img/logos-in-store-1.jpg');"></div>
+                <div class="static-item static-right" style="background-image: url('img/logos-in-store-2.jpg');"></div>
             </div>
         </div>
     </section>
