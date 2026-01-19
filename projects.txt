@@ -1,8 +1,9 @@
-name: ditch x gunnr popup
-hover_text: ditch • 198K views
+name: Ditch x Gunnr – Pop-up Campaign
+hover_text: Ditch x Gunnr – Pop-up Campaign • 198K views
 thumbnail: thumbnails/ditch.jpg
 vimeo_links:
 img/ditch.mp4
+https://www.youtube.com/embed/r6cID9rZ45k
 description:
 Assistant Director / Color – @johndrhm
 
@@ -26,8 +27,46 @@ Storyboard Illustrator – @ineurysm
 
 ---
 
-name: pholoh - Tokyo Ghoul Jeans
-hover_text: pholoh • 173K views
+name: Jägermeister x Big Echo – Yoenkingyo TV Spot
+hover_text: Jägermeister x Big Echo – Yoenkingyo TV Spot
+thumbnail: thumbnails/yoenkingyo.jpg
+vimeo_links:
+https://player.vimeo.com/video/1155812221?h=019fa9cb9b
+description:
+Director – Noah Kurima
+Producer – John Derham
+Assistant Producer – Elliot Farris
+Director of Photography – Ian Tanaya
+1st Assistant Camera – Jeremiah Matusich
+Production Assistants – Benz Asi, Ben Sintchak, Mike Weisman
+VHS – Benz Asi, Michael Zhang
+VFX Supervisor – John Derham
+SFX – Noah Hirsch
+VFX – John Derham
+Color – Benz Asi, John Derham
+
+---
+
+name: CATALOGUE – Swae Lee x Trippie Redd
+hover_text: CATALOGUE – Swae Lee x Trippie Redd • Mar 15
+thumbnail: thumbnails/catalogue.png
+vimeo_links:
+https://player.vimeo.com/video/1155776632?h=6ce3836623
+description:
+Director – Michael Gilbert
+Director of Photography – Jackson Magnabosco
+Gaffer – Jason Soung
+VFX Supervisor – John Derham
+Editor – John Derham
+VFX – John Derham, Re6ist.Visuals, Declan Fitzgerald, Larz
+3D – SP1LL, John Derham, Matthew Mercer
+Compositing Artist – John Derham
+Color – Brian Charles
+
+---
+
+name: Pholoh - Clothing Ad
+hover_text: Pholoh – Clothing Ad • 173K views
 thumbnail: thumbnails/pholoh.jpg
 vimeo_links:
 img/pholoh.mp4
@@ -57,8 +96,8 @@ Titles – @declanfzg
 
 ---
 
-name: rouri404 - videostar
-hover_text: Red Bull Records • 1.3K views
+name: Red Bull Videostar - Rouri404
+hover_text: Red Bull Videostar – Rouri404 • 1.3K views
 thumbnail: thumbnails/videostar.png
 vimeo_links:
 https://www.youtube.com/embed/vdC9KPCSyH8
@@ -74,8 +113,8 @@ Label – @redbullrecords
 
 ---
 
-name: NBA YoungBoy - TOP TINGZ
-hover_text: TOP TINGZ • 14M views
+name: Top Tingz – NBA YoungBoy
+hover_text: Top Tingz – NBA YoungBoy • 14M views
 thumbnail: thumbnails/top-tingz.png
 vimeo_links:
 https://www.youtube.com/embed/z8ir6d2JZMI
@@ -87,8 +126,8 @@ VFX – @kxrrupt @a1frostt
 
 ---
 
-name: $wag Nightmare - mercedes
-hover_text: mercedes • 68K views
+name: Mercedes – Carrington
+hover_text: Mercedes – Carrington • 68K views
 thumbnail: thumbnails/mercedes.jpg
 vimeo_links:
 https://www.youtube.com/embed/WdCew4JX4Gg
@@ -127,8 +166,8 @@ Production Company – @storytolds
 
 ---
 
-name: Dream, Ivory - Tangerine Dream
-hover_text: Tangerine Dream • 130K views
+name: Tangerine Dream – Dream, Ivory
+hover_text: Tangerine Dream – Dream, Ivory • 130K views
 thumbnail: thumbnails/tangerine-dream.png
 vimeo_links:
 https://www.youtube.com/embed/0FRPgfcUgZ8
@@ -158,8 +197,8 @@ Title Card – @srikarswork
 
 ---
 
-name: AP Dhillon & Shinda Kahlon - HITMEN
-hover_text: HITMEN • 1.3M views
+name: HITMEN – AP Dhillon & Shinda Kahlon
+hover_text: HITMEN – AP Dhillon & Shinda Kahlon • 1.3M views
 thumbnail: thumbnails/hitmen.jpg
 vimeo_links:
 https://www.youtube.com/embed/wiKCVac9N78
@@ -196,8 +235,8 @@ Casting Director – @apecastings
 
 ---
 
-name: Persona - PERS6NA
-hover_text: Persona • 83K views
+name: PersonaClo x Slump6s – Clothing Ad
+hover_text: PersonaClo x Slump6s – Clothing Ad • 83K views
 thumbnail: thumbnails/pers6na.png
 vimeo_links:
 img/persona.mp4
@@ -212,8 +251,8 @@ PA/BTS - @jeremiahpaculan @ell0rimo
 
 ---
 
-name: VEEZE - L.O.A.T
-hover_text: L.O.A.T • 4.2M views
+name: LOAT - Veeze
+hover_text: LOAT - Veeze • 4.2M views
 thumbnail: thumbnails/loat.png
 vimeo_links:
 https://www.youtube.com/embed/4H43ils7p6k
@@ -227,8 +266,8 @@ Production Company – @imagecontrolstudios
 
 ---
 
-name: Fait Par Lui - Runway
-hover_text: Fait Par Lui • 2.4K views
+name: AUTOMNE-HIVER – FAIT PAR LUI
+hover_text: AUTOMNE-HIVER – FAIT PAR LUI • 2.4K views
 thumbnail: thumbnails/runway.jpeg
 vimeo_links:
 https://player.vimeo.com/video/1147539246
@@ -240,7 +279,7 @@ https://www.youtube.com/watch?v=snJUiunkVsU
 
 ---
 
-name: Babyface Ray, LUCKI - Standing on Business
+name: Standing on Business – Lucki, Babyface Ray
 hover_text: Standing on Business • 1.7M views
 thumbnail: thumbnails/standing-on-business.png
 vimeo_links:
@@ -254,8 +293,8 @@ Production Company – @imagecontrolstudios
 
 ---
 
-name: twinuzis - Waiting For Love!
-hover_text: Waiting For Love! • 100K views
+name: Waiting for Love – Autumn!
+hover_text: Waiting for Love – Autumn! • 100K views
 thumbnail: thumbnails/waiting-for-love.png
 vimeo_links:
 https://www.youtube.com/embed/hFkoJwfDEK0
@@ -267,8 +306,8 @@ Title – @declanfzg
 
 ---
 
-name: AJ Vitanza - DON'T WANNA KNOW
-hover_text: DON'T WANNA KNOW • 9.2K views
+name: DON'T WANNA KNOW – AJ Vitanza
+hover_text: DON'T WANNA KNOW – AJ Vitanza • 9.2K views
 thumbnail: thumbnails/dont-wanna-know.jpg
 vimeo_links:
 https://www.youtube.com/embed/fvKDFVza9EM
@@ -287,8 +326,8 @@ Master – @ohadnissimmastering
 
 ---
 
-name: ziPbby - Bombay
-hover_text: Bombay • 193K views
+name: Bombay – Zipbby
+hover_text: Bombay – Zipbby • 193K views
 thumbnail: thumbnails/bombay.png
 vimeo_links:
 https://player.vimeo.com/video/1125948578
@@ -310,8 +349,8 @@ Stylist – @ryanleutz
 
 ---
 
-name: devstacks - LMK U MADE IT HOME OKAY
-hover_text: LMK U MADE IT HOME OKAY • 131K views
+name: LMK U MADE IT HOME OKAY – Devstacks
+hover_text: LMK U MADE IT HOME OKAY – Devstacks • 131K views
 thumbnail: thumbnails/lmk-u-made-it-home-okay.png
 vimeo_links:
 https://www.youtube.com/embed/CfQVhlk_VdE
@@ -322,8 +361,8 @@ Editor – @unifiedatlantic
 
 ---
 
-name: BabyChiefDoit ft. Luh Tyler - Why Would I?
-hover_text: Why Would I? • 931K views
+name: Why Would I? – Luh Tyler
+hover_text: Why Would I? – Luh Tyler • 931K views
 thumbnail: thumbnails/why-would-i.png
 vimeo_links:
 https://www.youtube.com/embed/BzYsfSJOZa4
