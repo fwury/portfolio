@@ -28,7 +28,7 @@
             margin: 0;
         }
 
-        /* --- Hero & Nav --- */
+        /* --- Hero & Nav Updates --- */
         #hero-header {
             position: relative;
             width: 100%;
@@ -150,6 +150,8 @@
             opacity: 0.7;
         }
 
+        /* --- End Hero Updates --- */
+
         .content-wrapper {
             padding-left: 5rem;
             padding-right: 5rem;
@@ -184,7 +186,7 @@
         /* --- NASA Section Styling --- */
         #nasa-section {
             background-color: #000;
-            /* Changed to Black */
+            /* Black Background */
             padding-top: 5rem;
             padding-bottom: 5rem;
             width: 100%;
@@ -231,8 +233,8 @@
 
         .nasa-static-col img {
             width: 100%;
-            aspect-ratio: 16 / 9;
-            /* Force Landscape */
+            aspect-ratio: 4 / 3;
+            /* Taller ratio to show wheels */
             object-fit: cover;
         }
 
@@ -360,7 +362,8 @@
 
             /* Ensure right images also maintain aspect ratio */
             .nasa-static-col img {
-                aspect-ratio: 16 / 9;
+                aspect-ratio: 4 / 3;
+                /* Keep taller ratio on mobile to prevent cropping */
                 width: 100%;
             }
         }
