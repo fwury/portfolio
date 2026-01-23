@@ -3,10 +3,7 @@ hover_text: Watermelon Smoothies • 202K views
 thumbnail: thumbnails/booster-juice.png
 vimeo_links:
 https://player.vimeo.com/video/1125941623
-https://player.vimeo.com/video/1147541445
-img/logos-in-store-1.jpg
 https://player.vimeo.com/video/1147541893
-img/logos-in-store-2.jpg
 
 description:
 https://www.youtube.com/watch?v=RWIqGBzpmKU

@@ -188,6 +188,15 @@
             aspect-ratio: 21 / 9;
         }
 
+        /* --- NASA Section Styling --- */
+        #nasa-section {
+            background-color: #0B3D91;
+            /* Official NASA Blue */
+            padding-top: 5rem;
+            padding-bottom: 5rem;
+            width: 100%;
+        }
+
         /* --- Custom Contact Styling --- */
         .contact-button {
             color: #fff;
@@ -277,6 +286,11 @@
             gap: 1.5rem;
         }
 
+        /* New Single Column Grid for NASA Section */
+        .portfolio-grid.single-col {
+            grid-template-columns: 1fr;
+        }
+
         @media (max-width: 768px) {
             .portfolio-grid {
                 grid-template-columns: 1fr;
@@ -316,12 +330,15 @@
             background-position: center;
         }
 
-        /* For Booster Section Static Images */
+        /* For Booster Section Static Items (Img or Video) */
         .static-item {
             background-size: cover;
             background-position: center;
             height: 100%;
             /* Force fill height of the flex row */
+            /* Handles video scaling correctly to mimic bg-size: cover */
+            object-fit: cover;
+            border: none;
         }
 
         /* Width proportions to match the visual reference */
@@ -364,13 +381,17 @@
             padding: 1rem;
         }
 
-        /* --- Views Icon --- */
+        /* --- Views Icon Inline Style --- */
         .views-icon {
             height: 1em;
+            /* Matches current font size */
             width: auto;
             vertical-align: middle;
             margin-left: 4px;
             padding-bottom: 2px;
+            /* Slight visual adjustment */
+            filter: brightness(0) invert(1);
+            /* Ensure it is white like the text */
         }
 
         /* --- Modal Styling --- */
@@ -469,6 +490,7 @@
             overflow-y: auto;
         }
 
+        /* --- Hero Mode Modal Styles (No text, full width) --- */
         .modal.hero-mode .description-container {
             display: none !important;
         }
@@ -663,8 +685,19 @@
 
             <!-- Static Booster Items (Bottom Row) -->
             <div class="booster-extras">
-                <div class="static-item static-left" style="background-image: url('img/logos-in-store-1.jpg');"></div>
-                <div class="static-item static-right" style="background-image: url('img/logos-in-store-2.jpg');"></div>
+                <div class="static-item static-left" style="background-image: url('img/booster-store.jpg');"></div>
+                <video class="static-item static-right" autoplay loop muted playsinline>
+                    <source src="img/booster-eatons.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+    </section>
+
+    <!-- NASA Section -->
+    <section id="nasa-section">
+        <div class="content-wrapper">
+            <div id="nasa-grid" class="portfolio-grid single-col">
+                <!-- NASA items will be injected here -->
             </div>
         </div>
     </section>
@@ -750,6 +783,7 @@
             // Project Modal Elements
             const portfolioGrid = document.getElementById('portfolio-grid');
             const boosterGrid = document.getElementById('booster-grid');
+            const nasaGrid = document.getElementById('nasa-grid');
             const projectModal = document.getElementById('projectModal');
             const closeProjectModalButton = document.getElementById('closeProjectModalButton');
             const projectTitle = document.getElementById('projectTitle');
@@ -767,10 +801,11 @@
             // Data Stores
             let mainProjectsData = [];
             let boosterProjectsData = [];
+            let nasaProjectsData = [];
 
             // Modal Context State
             let currentProjectIndex = -1;
-            let currentDataSource = 'main'; // 'main' or 'booster'
+            let currentDataSource = 'main'; // 'main', 'booster', or 'nasa'
 
             // --- Project Data Handling ---
             function parseProjectsTxt(text) {
@@ -823,18 +858,33 @@
                     if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
                     const textData = await response.text();
                     boosterProjectsData = parseProjectsTxt(textData);
-                    // Render to booster grid, use 'booster-image' class (portrait), source = 'booster'
+                    // Render to booster grid, use 'booster-image' class (1:1), source = 'booster'
                     renderPortfolioGrid(boosterProjectsData, boosterGrid, 'booster-image', 'booster');
                 } catch (error) {
                     console.error("Could not load or parse booster-juice.txt:", error);
                 }
             }
 
-            // Load both datasets
+            async function loadNasaProjects() {
+                try {
+                    const response = await fetch('nasa.txt');
+                    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                    const textData = await response.text();
+                    nasaProjectsData = parseProjectsTxt(textData);
+                    // Render to nasa grid, use 'portfolio-image' class (16:9), source = 'nasa'
+                    renderPortfolioGrid(nasaProjectsData, nasaGrid, 'portfolio-image', 'nasa');
+                } catch (error) {
+                    console.error("Could not load or parse nasa.txt:", error);
+                }
+            }
+
+            // Load all datasets
             loadMainProjects();
             loadBoosterProjects();
+            loadNasaProjects();
 
             // --- UI Rendering ---
+            // Updated to be reusable for all grids
             function renderPortfolioGrid(projects, gridElement, imageClass, source) {
                 gridElement.innerHTML = '';
                 projects.forEach((project, index) => {
@@ -859,7 +909,16 @@
                 currentProjectIndex = index;
                 currentDataSource = source;
 
-                let activeData = (source === 'booster') ? boosterProjectsData : mainProjectsData;
+                // Determine which array to pull data from
+                let activeData;
+                if (source === 'booster') {
+                    activeData = boosterProjectsData;
+                } else if (source === 'nasa') {
+                    activeData = nasaProjectsData;
+                } else {
+                    activeData = mainProjectsData;
+                }
+
                 const project = activeData[index];
 
                 // Ensure text is visible for normal projects
@@ -960,7 +1019,14 @@
                     }
 
                     // Determine which list is active
-                    let activeData = (currentDataSource === 'booster') ? boosterProjectsData : mainProjectsData;
+                    let activeData;
+                    if (currentDataSource === 'booster') {
+                        activeData = boosterProjectsData;
+                    } else if (currentDataSource === 'nasa') {
+                        activeData = nasaProjectsData;
+                    } else {
+                        activeData = mainProjectsData;
+                    }
 
                     switch (event.key) {
                         case 'Escape': closeProjectModal(); break;
