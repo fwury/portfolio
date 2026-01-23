@@ -1,5 +1,5 @@
-name: NASA – ISRU Pilot Excavator
-hover_text: NASA – ISRU Pilot Excavator
+name: NASA ISRU Pilot Excavator – Lunar Field Test
+hover_text: NASA ISRU Pilot Excavator – Lunar Field Test
 thumbnail: thumbnails/nasa.avif
 vimeo_links:
 https://player.vimeo.com/video/1153978591
@@ -9,6 +9,7 @@ https://player.vimeo.com/video/1153446699
 https://player.vimeo.com/video/1153446722
 
 description:
-
+Alongside University of Toronto's Aerospace & Mechatronics (UTIAS) work
+3D, Simulation, Rigging, Animation, & Lunar gravity setup – John Derham (@johndrhm)
 
 ---
