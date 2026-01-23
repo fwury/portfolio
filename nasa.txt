@@ -1,6 +1,6 @@
 name: NASA ISRU Pilot Excavator – Lunar Field Test
 hover_text: NASA ISRU Pilot Excavator – Lunar Field Test
-thumbnail: thumbnails/nasa.avif
+thumbnail: thumbnails/nasa.png
 vimeo_links:
 https://player.vimeo.com/video/1153978591
 https://player.vimeo.com/video/1153446710

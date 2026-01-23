@@ -28,7 +28,7 @@
             margin: 0;
         }
 
-        /* --- Hero & Nav Updates --- */
+        /* --- Hero & Nav --- */
         #hero-header {
             position: relative;
             width: 100%;
@@ -150,8 +150,6 @@
             opacity: 0.7;
         }
 
-        /* --- End Hero Updates --- */
-
         .content-wrapper {
             padding-left: 5rem;
             padding-right: 5rem;
@@ -180,20 +178,62 @@
             gap: 1.5rem;
             /* Match grid gap */
             width: 100%;
-            /* 
-               This aspect ratio sets the height of the row relative to its width.
-               21/9 creates a nice wide rectangular block that accommodates 
-               both the portrait and landscape images well.
-            */
             aspect-ratio: 21 / 9;
         }
 
         /* --- NASA Section Styling --- */
         #nasa-section {
-            background-color: black;
+            background-color: #000;
+            /* Changed to Black */
             padding-top: 5rem;
             padding-bottom: 5rem;
             width: 100%;
+        }
+
+        /* Desktop Layout: Grid */
+        .nasa-layout {
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            /* Left column 3x wider than right (75% / 25%) */
+            gap: 1.5rem;
+            width: 100%;
+        }
+
+        /* Wrapper for the JS Injected Item */
+        #nasa-grid {
+            width: 100%;
+            height: 100%;
+            /* Stretch to match right column */
+        }
+
+        /* Force the dynamic item to fill the height */
+        #nasa-grid .portfolio-item {
+            height: 100%;
+            width: 100%;
+        }
+
+        /* Custom class for the NASA dynamic image (passed via JS) */
+        .nasa-dynamic-image {
+            height: 100%;
+            width: 100%;
+            background-size: cover;
+            background-position: center;
+            /* No fixed aspect ratio here on desktop, it conforms to the neighbors */
+        }
+
+        /* Right column static images */
+        .nasa-static-col {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            height: 100%;
+        }
+
+        .nasa-static-col img {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            /* Force Landscape */
+            object-fit: cover;
         }
 
         /* --- Custom Contact Styling --- */
@@ -285,17 +325,12 @@
             gap: 1.5rem;
         }
 
-        /* New Single Column Grid for NASA Section */
-        .portfolio-grid.single-col {
-            grid-template-columns: 1fr;
-        }
-
         @media (max-width: 768px) {
             .portfolio-grid {
                 grid-template-columns: 1fr;
             }
 
-            /* Mobile styles for the extras row */
+            /* Mobile styles for Booster extras row */
             .booster-extras {
                 flex-direction: column;
                 aspect-ratio: auto;
@@ -308,6 +343,25 @@
                 height: auto;
                 aspect-ratio: 16 / 9;
                 /* Revert to standard rectangle on mobile */
+            }
+
+            /* --- Mobile NASA Styles (Stack Vertically) --- */
+            .nasa-layout {
+                display: flex;
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            /* Force the dynamic image to contain standard aspect ratio */
+            .nasa-dynamic-image {
+                aspect-ratio: 16 / 9;
+                height: auto;
+            }
+
+            /* Ensure right images also maintain aspect ratio */
+            .nasa-static-col img {
+                aspect-ratio: 16 / 9;
+                width: 100%;
             }
         }
 
@@ -695,8 +749,18 @@
     <!-- NASA Section -->
     <section id="nasa-section">
         <div class="content-wrapper">
-            <div id="nasa-grid" class="portfolio-grid single-col">
-                <!-- NASA items will be injected here -->
+            <div class="nasa-layout">
+                <!-- Left Column: Dynamic Content -->
+                <div id="nasa-grid">
+                    <!-- JS injects here -->
+                </div>
+
+                <!-- Right Column: 3 Static Images -->
+                <div class="nasa-static-col">
+                    <img src="img/nasa-1.jpg" alt="Nasa 1">
+                    <img src="img/nasa-2.jpg" alt="Nasa 2">
+                    <img src="img/nasa-3.jpg" alt="Nasa 3">
+                </div>
             </div>
         </div>
     </section>
@@ -870,8 +934,8 @@
                     if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
                     const textData = await response.text();
                     nasaProjectsData = parseProjectsTxt(textData);
-                    // Render to nasa grid, use 'portfolio-image' class (16:9), source = 'nasa'
-                    renderPortfolioGrid(nasaProjectsData, nasaGrid, 'portfolio-image', 'nasa');
+                    // Use 'nasa-dynamic-image' class to force full height/cover
+                    renderPortfolioGrid(nasaProjectsData, nasaGrid, 'nasa-dynamic-image', 'nasa');
                 } catch (error) {
                     console.error("Could not load or parse nasa.txt:", error);
                 }
@@ -883,7 +947,6 @@
             loadNasaProjects();
 
             // --- UI Rendering ---
-            // Updated to be reusable for all grids
             function renderPortfolioGrid(projects, gridElement, imageClass, source) {
                 gridElement.innerHTML = '';
                 projects.forEach((project, index) => {
