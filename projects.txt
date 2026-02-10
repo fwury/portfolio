@@ -1,21 +1,3 @@
-name: Idealogue EP Rollout – Joon
-hover_text: Idealogue EP Rollout – Joon • 2M views
-thumbnail: thumbnails/joon.jpg
-vimeo_links:
-https://player.vimeo.com/video/1155625024
-https://player.vimeo.com/video/1155624952
-https://player.vimeo.com/video/1155625005
-https://player.vimeo.com/video/1155624978
-description:
-Director – Chris Bradford
-Producer – John Derham
-DP – Kyle Kim
-Edit – John Derham
-VFX – John Derham
-Color – John Derham
-
----
-
 name: Ditch x Gunnr – Pop-up Campaign
 hover_text: Ditch x Gunnr – Pop-up Campaign • 198K views
 thumbnail: thumbnails/ditch.jpg
@@ -128,6 +110,24 @@ Assistant Director – @gaziwrld
 Production Assistant – @dylbradshaw
 Producer – @31sentinel @evansasha_
 Label – @redbullrecords
+
+---
+
+name: Idealogue EP Rollout – Joon
+hover_text: Idealogue EP Rollout – Joon • 2M views
+thumbnail: thumbnails/joon.jpg
+vimeo_links:
+https://player.vimeo.com/video/1155625024
+https://player.vimeo.com/video/1155624952
+https://player.vimeo.com/video/1155625005
+https://player.vimeo.com/video/1155624978
+description:
+Director – Chris Bradford
+Producer – John Derham
+DP – Kyle Kim
+Edit – John Derham
+VFX – John Derham
+Color – John Derham
 
 ---
 
