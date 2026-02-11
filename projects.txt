@@ -48,7 +48,7 @@ Color – Benz Asi, John Derham
 ---
 
 name: CATALOGUE – Swae Lee x Trippie Redd
-hover_text: CATALOGUE – Swae Lee x Trippie Redd • Mar 15
+hover_text: CATALOGUE – Swae Lee x Trippie Redd
 thumbnail: thumbnails/catalogue.png
 vimeo_links:
 https://player.vimeo.com/video/1155776632?h=6ce3836623
